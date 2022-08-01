@@ -1,7 +1,8 @@
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
-from .models import Book
-from .forms import BookModelForm, AuthorModelForm
+
+from ..forms import BookModelForm
+from ..models import Book
 
 
 class IndexListView(ListView):
