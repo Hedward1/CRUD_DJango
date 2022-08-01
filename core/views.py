@@ -7,6 +7,7 @@ from .forms import BookModelForm, AuthorModelForm, GenreModelForm
 class IndexListView(ListView):
     model = Book
     template_name = "home.html"
+    queryset = Book.objects.all()
     # context_object_name = 'book'
     paginate_by = 4
 
