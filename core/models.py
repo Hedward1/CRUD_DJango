@@ -21,10 +21,10 @@ class Author(Base):
 
 
 class Genre(Base):
-    genre = models.CharField('Genre', max_length=100)
+    genreName = models.CharField('Genre', max_length=100)
 
     def __str__(self):
-        return self.genre
+        return self.genreName
 
 
 class Book (Base):
