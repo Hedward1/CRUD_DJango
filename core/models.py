@@ -27,9 +27,13 @@ class Genre(Base):
         return self.genreName
 
 
+def set_default_genre():
+    return Genre.objects.get_or_create(name='GenericGenre')[0]  # (obj, boolean)
+
+
 class Book (Base):
     title = models.CharField('Name', max_length=100)
-    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, on_delete=models.SET(set_default_genre))
     count = models.IntegerField(null=True, default=0)
     author = models.ManyToManyField(Author)
 
